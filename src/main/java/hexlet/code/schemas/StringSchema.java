@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public final class StringSchema {
-    private List<Predicate<Object>> validators = new ArrayList();
+public final class StringSchema extends BaseSchema {
 
     //любая непустая строка
     public void required() {
-        validators.add(s -> s instanceof String && !((String) s).isBlank());
+        this.addRule(s -> s instanceof String && !((String) s).isBlank());
     }
 
     //строка равна или длиннее указанного числа
@@ -22,21 +21,5 @@ public final class StringSchema {
     public StringSchema minLength(int length) {
         this.addRule(s -> s == null || s instanceof String && ((String) s).length() >= length);
         return this;
-    }
-
-    //добавление правила для проверки
-    public void addRule(Predicate<Object> rule) {
-        validators.add(rule);
-    }
-
-    //валидация данных
-    public boolean isValid(Object data) {
-        for (Predicate<Object> validator: validators) {
-
-            if (!validator.test(data)) {
-                return false;
-            }
-        }
-        return true;
     }
 }
