@@ -1,9 +1,5 @@
 package hexlet.code.schemas;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Predicate;
-
 public final class StringSchema extends BaseSchema {
 
     //любая непустая строка
