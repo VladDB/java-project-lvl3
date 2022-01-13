@@ -3,8 +3,9 @@ package hexlet.code.schemas;
 public final class StringSchema extends BaseSchema {
 
     //любая непустая строка
-    public void required() {
+    public StringSchema required() {
         this.addRule(s -> s instanceof String && !((String) s).isBlank());
+        return this;
     }
 
     //строка равна или длиннее указанного числа
