@@ -13,4 +13,7 @@ lint:
 build:
 	./gradlew clean build
 
+tests:
+	./gradlew test
+
 .PHONY: build
