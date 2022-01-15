@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class BaseSchema {
 
-    private List<Predicate<Object>> validators = new ArrayList();
+    private List<Predicate<Object>> validators = new ArrayList<>();
 
     //добавление правила для проверки
     public final void addRule(Predicate<Object> rule) {
