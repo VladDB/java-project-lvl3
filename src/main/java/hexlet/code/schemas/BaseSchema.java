@@ -6,16 +6,16 @@ import java.util.function.Predicate;
 
 public class BaseSchema {
 
-    private List<Predicate<Object>> validators = new ArrayList<>();
+    private List<Predicate<Object>> rules = new ArrayList<>();
 
     //добавление правила для проверки
     public final void addRule(Predicate<Object> rule) {
-        validators.add(rule);
+        rules.add(rule);
     }
 
     //валидация данных
     public final boolean isValid(Object data) {
-        for (Predicate<Object> validator: validators) {
+        for (Predicate<Object> validator: rules) {
 
             if (!validator.test(data)) {
                 return false;

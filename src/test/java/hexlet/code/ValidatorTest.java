@@ -28,7 +28,7 @@ public class ValidatorTest {
         final int min = 4;
 
         Assertions.assertTrue(testString.minLength(min).isValid("Everything"));
-        Assertions.assertFalse(testString.minLength(min).isValid("Eve"));
+        Assertions.assertFalse(testString.isValid("Eve"));
 
         Assertions.assertTrue(testString.contains("what").isValid("what is love?"));
         Assertions.assertFalse(testString.contains("some").isValid("what is love?"));
