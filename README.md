@@ -13,7 +13,7 @@
 в который должны попадать числа включая границы); **данные типа Map** - required (проверка передаваемых данных по типу),
 sizeof (количество пар ключ-значений в объекте Map должно быть равно заданному), shape (позволяет описывать валидацию для значений объекта Map по ключам).
 
-###Примеры использования
+##Примеры использования
 
 **Данные типа String**
 ````
@@ -24,11 +24,8 @@ StringSchema schema = v.string();
 schema.required(); //добавление валидатора
 
 schema.isValid("what does the fox say"); // true
-
 schema.isValid(""); // false
-
 schema.contains("what").isValid("what does the fox say"); // true
-
 schema.contains("whatthe").isValid("what does the fox say"); // false
 ````
 
@@ -88,5 +85,4 @@ Map<String, Object> human4 = new HashMap<>();
 human4.put("name", "Valya");
 human4.put("age", -5);
 schema.isValid(actual5); // false
-
 ````

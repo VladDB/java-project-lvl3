@@ -17,7 +17,7 @@ public class BaseSchema {
     public final boolean isValid(Object data) {
         for (Predicate<Object> validator: rules) {
 
-            if (!validator.test(data)) {
+            if (data == null || !validator.test(data)) {
                 return false;
             }
         }
