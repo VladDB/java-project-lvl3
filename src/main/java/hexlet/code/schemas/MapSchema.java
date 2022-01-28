@@ -7,6 +7,7 @@ public final class MapSchema extends BaseSchema {
     //Проверка типа данных
     public void required() {
         this.addRule(data -> data instanceof Map);
+        setCheckRequire(true);
     }
 
     //проверка количества пар в мапе

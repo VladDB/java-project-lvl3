@@ -5,6 +5,7 @@ public final class StringSchema extends BaseSchema {
     //любая непустая строка
     public StringSchema required() {
         this.addRule(s -> s instanceof String && !((String) s).isBlank());
+        setCheckRequire(true);
         return this;
     }
 

@@ -5,6 +5,7 @@ public final class NumberSchema extends BaseSchema {
     // является любым числом включая ноль
     public void required() {
         this.addRule(num -> num instanceof Integer);
+        setCheckRequire(true);
     }
 
     //является положительным числом
