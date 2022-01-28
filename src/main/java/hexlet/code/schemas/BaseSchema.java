@@ -32,7 +32,7 @@ public class BaseSchema {
     }
 
     //флаг для использования метода required()
-    protected final void setCheckRequire(boolean checkRequire) {
+    public final void setCheckRequire(boolean checkRequire) {
         this.checkRequire = checkRequire;
     }
 }
